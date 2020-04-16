@@ -3,7 +3,7 @@
 import binascii
 from scapy.all import *
 from scapy.layers.inet import UDP
-from scapy.layers.inet6 import IPv6, ICMPv6ND_RA, ICMPv6EchoRequest
+from scapy.layers.inet6 import IPv6
 
 number_packets = 1000
 
